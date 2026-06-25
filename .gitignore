@@ -1,0 +1,116 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+web_stage/
+.pnp
+.pnp.js
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports (next.js / node)
+.pnpm-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented code coverage downloads
+coverage
+.nyc_output
+
+# Next.js build output
+.next/
+out/
+
+# Nuxt.js build project
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public-gatsby/
+
+# Serverless Webpack directories
+.webpack/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.development
+.env.test
+.env.production
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.cproject
+.settings/
+*.launch
+*.sublime-workspace
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Local databases / Redis / Docker persistence
+pgdata/
+mysql_data/
+redis_data/
+docker/volumes/

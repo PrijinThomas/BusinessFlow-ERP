@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  # Database Service
+  db:
+    image: postgres:15-alpine
+    container_name: businessflow-db
+    restart: always
+    environment:
+      POSTGRES_DB: businessflow_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - businessflow-network
+
+  # Cache & Queue Service
+  cache:
+    image: redis:7-alpine
+    container_name: businessflow-cache
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - businessflow-network
+
+  # Backend API Service (Placeholder configuration - ready when backend/Dockerfile is added)
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: ../docker/backend.Dockerfile # or local Dockerfile
+  #   container_name: businessflow-backend
+  #   restart: always
+  #   environment:
+  #     - DATABASE_URL=postgresql://admin:password123@db:5432/businessflow_db
+  #     - REDIS_URL=redis://cache:6379
+  #     - PORT=8000
+  #   ports:
+  #     - "8000:8000"
+  #   depends_on:
+  #     - db
+  #     - cache
+  #   networks:
+  #     - businessflow-network
+
+  # Frontend Application Service (Placeholder configuration - ready when frontend/Dockerfile is added)
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: ../docker/frontend.Dockerfile # or local Dockerfile
+  #   container_name: businessflow-frontend
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - businessflow-network
+
+volumes:
+  pgdata:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  businessflow-network:
+    driver: bridge
