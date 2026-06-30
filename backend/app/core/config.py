@@ -31,5 +31,11 @@ class Settings(BaseSettings):
     # Database connection string (defaults to a standard local PostgreSQL database)
     DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/erp_db"
 
+    # JWT Authentication settings
+    SECRET_KEY: str = "a_very_secret_key_change_in_production_1234567890"
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+
 # A single global instance of the Settings class to be used across the application.
 settings = Settings()
+
